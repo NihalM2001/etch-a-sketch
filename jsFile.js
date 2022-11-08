@@ -15,8 +15,10 @@ function createGrid(userEntry,gridSize)
         let grid = document.createElement('div');
         grid.classList.add('grid');
         container.append(grid);
+        grid.addEventListener('mouseover',function(e){ e.target.style.backgroundColor='black' })
     }
 }
+
 
 let reset=document.querySelector('#reset');
 reset.addEventListener('click',function(){ window.location.reload(); });
