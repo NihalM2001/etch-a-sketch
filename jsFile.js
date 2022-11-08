@@ -3,7 +3,21 @@ let container = document.getElementById('container');
 let userEntry = parseInt(prompt("Enter a side of the grid (1 to 100 is preffered)"));
 let gridSize = userEntry * userEntry;
 
-createGrid(userEntry,gridSize);
+checkGridSize();
+
+function checkGridSize()
+{
+    if(userEntry<1 || userEntry>100 || userEntry===null || typeof(userEntry)===String)
+    {
+        alert("Enter size between 1 and 100 only");
+        window.location.reload();
+    }
+    else
+    {
+        createGrid(userEntry,gridSize);    
+    }
+}
+
 
 function createGrid(userEntry,gridSize) 
 {
@@ -22,4 +36,5 @@ function createGrid(userEntry,gridSize)
 
 let reset=document.querySelector('#reset');
 reset.addEventListener('click',function(){ window.location.reload(); });
+
 
