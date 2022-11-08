@@ -1,8 +1,7 @@
 let container = document.getElementById('container');
 
-let userEntry = parseInt(prompt("enter a side of the grid"));
+let userEntry = parseInt(prompt("Enter a side of the grid (1 to 100 is preffered)"));
 let gridSize = userEntry * userEntry;
-let grid;
 
 createGrid(userEntry,gridSize);
 
@@ -13,11 +12,12 @@ function createGrid(userEntry,gridSize)
 
     for (let i = 0; i < gridSize; i++) 
     {
-        grid = document.createElement('div');
+        let grid = document.createElement('div');
         grid.classList.add('grid');
         container.append(grid);
     }
-    
 }
 
+let reset=document.querySelector('#reset');
+reset.addEventListener('click',function(){ window.location.reload(); });
 
